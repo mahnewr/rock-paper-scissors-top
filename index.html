@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script type="text/javascript" src="index.js"></script>
     <title>Rock Paper Scissors</title>
   </head>
   <body>
@@ -12,12 +11,12 @@
       <h1 class="title">Rock Paper Scissors</h1>
       <div class="mode">
         <svg
-          class="hide light-mode"
+          class="hide light"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           version="1.1"
-          width="50"
-          height="50"
+          width="40"
+          height="40"
           viewBox="0 0 256 256"
           xml:space="preserve"
         >
@@ -45,7 +44,7 @@
                 stroke-linecap: butt;
                 stroke-linejoin: miter;
                 stroke-miterlimit: 10;
-                fill: rgb(0, 0, 0);
+                fill: #6f6f6f;
                 fill-rule: nonzero;
                 opacity: 1;
               "
@@ -61,7 +60,7 @@
                 stroke-linecap: butt;
                 stroke-linejoin: miter;
                 stroke-miterlimit: 10;
-                fill: rgb(0, 0, 0);
+                fill: #6f6f6f;
                 fill-rule: nonzero;
                 opacity: 1;
               "
@@ -77,7 +76,7 @@
                 stroke-linecap: butt;
                 stroke-linejoin: miter;
                 stroke-miterlimit: 10;
-                fill: rgb(0, 0, 0);
+                fill: #6f6f6f;
                 fill-rule: nonzero;
                 opacity: 1;
               "
@@ -93,7 +92,7 @@
                 stroke-linecap: butt;
                 stroke-linejoin: miter;
                 stroke-miterlimit: 10;
-                fill: rgb(0, 0, 0);
+                fill: #6f6f6f;
                 fill-rule: nonzero;
                 opacity: 1;
               "
@@ -109,7 +108,7 @@
                 stroke-linecap: butt;
                 stroke-linejoin: miter;
                 stroke-miterlimit: 10;
-                fill: rgb(0, 0, 0);
+                fill: #6f6f6f;
                 fill-rule: nonzero;
                 opacity: 1;
               "
@@ -125,7 +124,7 @@
                 stroke-linecap: butt;
                 stroke-linejoin: miter;
                 stroke-miterlimit: 10;
-                fill: rgb(0, 0, 0);
+                fill: #6f6f6f;
                 fill-rule: nonzero;
                 opacity: 1;
               "
@@ -141,7 +140,7 @@
                 stroke-linecap: butt;
                 stroke-linejoin: miter;
                 stroke-miterlimit: 10;
-                fill: rgb(0, 0, 0);
+                fill: #6f6f6f;
                 fill-rule: nonzero;
                 opacity: 1;
               "
@@ -157,7 +156,7 @@
                 stroke-linecap: butt;
                 stroke-linejoin: miter;
                 stroke-miterlimit: 10;
-                fill: rgb(0, 0, 0);
+                fill: #6f6f6f;
                 fill-rule: nonzero;
                 opacity: 1;
               "
@@ -173,7 +172,7 @@
                 stroke-linecap: butt;
                 stroke-linejoin: miter;
                 stroke-miterlimit: 10;
-                fill: rgb(0, 0, 0);
+                fill: #6f6f6f;
                 fill-rule: nonzero;
                 opacity: 1;
               "
@@ -183,12 +182,12 @@
           </g>
         </svg>
         <svg
-          class="dark-mode"
+          class="dark"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           version="1.1"
-          width="40"
-          height="40"
+          width="35"
+          height="35"
           viewBox="0 0 256 256"
           xml:space="preserve"
         >
@@ -229,43 +228,45 @@
     </header>
     <section class="rounds">
       <h2 class="rounds-text">How many rounds do you want to play?</h2>
-      <input type="number" />
+      <input type="number" class="rounds-input" />
       <button class="play-button">Let's Play!</button>
     </section>
-    <section class="score-round-reset">
-      <div class="scoreboard">
-        <h3 class="round-title">SCORE</h3>
-        <div class="scores">
-          <div class="comp-score">2</div>
-          <div class="user-score">1</div>
+    <section class="main-game hide">
+      <section class="score-round-reset">
+        <div class="scoreboard">
+          <h3 class="round-title">SCORE</h3>
+          <div class="scores">
+            <div class="comp-score">2</div>
+            <div class="user-score">1</div>
+          </div>
         </div>
-      </div>
-      <div class="round-widget">
-        <h3 class="round-title">ROUND</h3>
-        <div class="rounds">
-          <div class="current-round">1</div>
-          <div class="total-rounds">5</div>
+        <div class="round-widget">
+          <h3 class="round-title">ROUND</h3>
+          <div class="rounds">
+            <div class="current-round">1</div>
+            <div class="total-rounds">1</div>
+          </div>
         </div>
-      </div>
-      <div class="reset">
-        <button class="reset-button">RESET</button>
-      </div>
+        <div class="reset">
+          <button class="reset-button">RESET</button>
+        </div>
+      </section>
+      <section class="comp-game">
+        <h1 class="comp-title">COMPUTER</h1>
+        <img class="comp-selection" />
+      </section>
+      <section class="vs-result">
+        <h2 class="vs-result-text">VS.</h2>
+      </section>
+      <section class="user-game">
+        <h1 class="user-title">YOU</h1>
+        <img class="user-selection" />
+        <section class="user-options"></section>
+        <img class="rock" />
+        <img class="paper" />
+        <img class="scissors" />
+      </section>
     </section>
-    <section class="comp-game">
-      <h1 class="comp-title">COMPUTER</h1>
-      <img class="comp-selection" />
-    </section>
-    <section class="vs-result">
-      <h2 class="vs-result-text">VS.</h2>
-    </section>
-    <section class="user-game">
-      <h1 class="user-title">YOU</h1>
-      <img class="user-selection" />
-    </section>
-    <section class="user-options">
-      <img class="rock" />
-      <img class="paper" />
-      <img class="scissors" />
-    </section>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
