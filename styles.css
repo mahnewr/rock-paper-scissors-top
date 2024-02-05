@@ -23,7 +23,7 @@ body {
   font-family: sans-serif;
   padding: 36px;
   background-color: white;
-  color: black;
+  color: #070a52;
 }
 
 .dark-mode {
@@ -37,12 +37,15 @@ header {
   justify-content: space-between;
 }
 
-.hide {
+.rounds.hide,
+.main-game.hide,
+.light.hide,
+.dark.hide {
   display: none;
 }
 
 .light {
-  color: bebfd1;
+  color: #bebfd1;
 }
 
 .rounds {
@@ -62,9 +65,56 @@ header {
 .rounds-input {
   font-size: 48px;
   text-align: center;
+  padding-left: 18px;
   font-weight: 400;
   width: 120px;
   height: 80px;
-  border: 4px solid #df2e38;
+  border: 2px solid #bebfd1;
   border-radius: 12px;
+}
+
+.play-button {
+  background-color: #df2e38;
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+  font-size: 27px;
+  font-weight: 800;
+  border-radius: 12px;
+  border: none;
+  padding: 24px 36px;
+  cursor: pointer;
+}
+
+.play-button:hover {
+  background-color: #c62334;
+}
+
+.play-button:active {
+  background-color: #c12630;
+  transform: scale(0.95);
+}
+
+.play-button:disabled {
+  background-color: #c12630; /* Change the background color for disabled state */
+  cursor: not-allowed; /* Change cursor style for better feedback */
+  opacity: 0.6; /* Adjust opacity to visually indicate the disabled state */
+  /* You can also customize other styles to indicate a disabled state */
+}
+
+body.dark-mode .play-button {
+  background-color: #2751a3;
+}
+
+.mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  width: 40px;
+  height: 40px;
+}
+
+.main-game {
+  height: calc(100vh - 112px);
 }
