@@ -244,11 +244,11 @@ const updateScores = function (result) {
 // Determine overall winner:
 determineOverallWinner = function () {
   if (userScoreValue > compScoreValue) {
-    return "YOU WON THE GAME!";
+    return "YOU WON!";
   } else if (userScoreValue < compScoreValue) {
     return "COMPUTER WON!";
   } else {
-    return "IT'S A DRAW!";
+    return "GAME ENDED IN A DRAW!";
   }
 };
 
@@ -264,7 +264,10 @@ darkLightMode.addEventListener("click", function () {
 document.addEventListener("DOMContentLoaded", function () {
   roundsInput.addEventListener("input", function () {
     // Check if the input field is empty
-    if (roundsInput.value.trim() === "") {
+    if (
+      roundsInput.value.trim() === "" ||
+      parseInt(roundsInput.value.trim()) === 0
+    ) {
       playButton.disabled = true;
     } else {
       playButton.disabled = false;
@@ -331,7 +334,7 @@ userChoices.forEach((choice) => {
       if (currentRoundValue < userRoundsInput && result !== "draw") {
         currentRoundValue++;
         currentRound.textContent = currentRoundValue;
-      } else if (currentRoundValue == userRoundsInput) {
+      } else if (currentRoundValue == userRoundsInput && result !== "draw") {
         const winnerText = determineOverallWinner();
         vsResultText.textContent = "VS.";
         makeMoveText.textContent = winnerText;
